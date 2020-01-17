@@ -1,6 +1,6 @@
 {
-  "short_name": "Lunit OPT",
-  "name": "Lunit Observer Performance Testing",
+  "short_name": "Lunit FE Components",
+  "name": "Lunit Front-End Components",
   "icons": [
     {
       "src": "favicon.ico",

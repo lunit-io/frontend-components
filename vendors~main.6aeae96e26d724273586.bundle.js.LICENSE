@@ -1,0 +1,804 @@
+/*! cornerstone-core - 2.3.0 - 2019-07-03 | (c) 2016 Chris Hafey | https://github.com/cornerstonejs/cornerstone */
+
+/*!**************************!*\
+  !*** ./canvasToPixel.js ***!
+  \**************************/
+
+/*! exports provided: default */
+
+/*! ./enabledElements.js */
+
+/*! ./internal/getTransform.js */
+
+/*!****************************!*\
+  !*** ./colors/colormap.js ***!
+  \****************************/
+
+/*! exports provided: getColormapsList, getColormap */
+
+/*! ./lookupTable.js */
+
+/*!*************************!*\
+  !*** ./colors/index.js ***!
+  \*************************/
+
+/*! ./colormap.js */
+
+/*!*******************************!*\
+  !*** ./colors/lookupTable.js ***!
+  \*******************************/
+
+/*!********************!*\
+  !*** ./disable.js ***!
+  \********************/
+
+/*! ./triggerEvent.js */
+
+/*! ./events.js */
+
+/*!*************************!*\
+  !*** ./displayImage.js ***!
+  \*************************/
+
+/*! ./internal/getDefaultViewport.js */
+
+/*! ./updateImage.js */
+
+/*! ./internal/now.js */
+
+/*! ./layers.js */
+
+/*!*****************!*\
+  !*** ./draw.js ***!
+  \*****************/
+
+/*! ./internal/drawImage.js */
+
+/*!****************************!*\
+  !*** ./drawInvalidated.js ***!
+  \****************************/
+
+/*!*******************!*\
+  !*** ./enable.js ***!
+  \*******************/
+
+/*! ./resize.js */
+
+/*! ./internal/drawImageSync.js */
+
+/*! ./internal/requestAnimationFrame.js */
+
+/*! ./internal/tryEnableWebgl.js */
+
+/*! ./generateUUID.js */
+
+/*! ./internal/getCanvas.js */
+
+/*!*******************************!*\
+  !*** ./enabledElementData.js ***!
+  \*******************************/
+
+/*! exports provided: getElementData, removeElementData */
+
+/*!****************************!*\
+  !*** ./enabledElements.js ***!
+  \****************************/
+
+/*! exports provided: getEnabledElement, addEnabledElement, getEnabledElementsByImageId, getEnabledElements */
+
+/*!*******************!*\
+  !*** ./events.js ***!
+  \*******************/
+
+/*! exports provided: default, events */
+
+/*!******************************!*\
+  !*** ./falseColorMapping.js ***!
+  \******************************/
+
+/*! exports provided: convertImageToFalseColorImage, convertToFalseColorImage, restoreImage */
+
+/*! ./pixelDataToFalseColorData.js */
+
+/*! ./colors/colormap.js */
+
+/*!************************!*\
+  !*** ./fitToWindow.js ***!
+  \************************/
+
+/*! ./internal/getImageFitScale.js */
+
+/*!*************************!*\
+  !*** ./generateUUID.js ***!
+  \*************************/
+
+/*!***************************************!*\
+  !*** ./getDefaultViewportForImage.js ***!
+  \***************************************/
+
+/*!*********************!*\
+  !*** ./getImage.js ***!
+  \*********************/
+
+/*!**********************!*\
+  !*** ./getPixels.js ***!
+  \**********************/
+
+/*! ./getStoredPixels.js */
+
+/*! ./internal/getModalityLUT.js */
+
+/*!****************************!*\
+  !*** ./getStoredPixels.js ***!
+  \****************************/
+
+/*!************************!*\
+  !*** ./getViewport.js ***!
+  \************************/
+
+/*!***********************!*\
+  !*** ./imageCache.js ***!
+  \***********************/
+
+/*! exports provided: cachedImages, setMaximumSizeBytes, putImageLoadObject, getImageLoadObject, removeImageLoadObject, getCacheInfo, purgeCache, changeImageIdCacheSize, default */
+
+/*!************************!*\
+  !*** ./imageLoader.js ***!
+  \************************/
+
+/*! exports provided: loadImage, loadAndCacheImage, registerImageLoader, registerUnknownImageLoader */
+
+/*! ./imageCache.js */
+
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+
+/*! exports provided: drawImage, generateLut, getDefaultViewport, setDefaultViewport, requestAnimationFrame, storedPixelDataToCanvasImageData, storedColorPixelDataToCanvasImageData, storedPixelDataToCanvasImageDataColorLUT, storedPixelDataToCanvasImageDataPseudocolorLUT, internal, renderLabelMapImage, renderPseudoColorImage, renderColorImage, renderGrayscaleImage, renderWebImage, renderToCanvas, canvasToPixel, disable, displayImage, draw, drawInvalidated, enable, getElementData, removeElementData, getEnabledElement, addEnabledElement, getEnabledElementsByImageId, getEnabledElements, addLayer, removeLayer, getLayer, getLayers, getVisibleLayers, setActiveLayer, getActiveLayer, purgeLayers, setLayerImage, fitToWindow, getDefaultViewportForImage, getImage, getPixels, getStoredPixels, getViewport, loadImage, loadAndCacheImage, registerImageLoader, registerUnknownImageLoader, invalidate, invalidateImageId, pageToPixel, pixelToCanvas, reset, resize, setToPixelCoordinateSystem, setViewport, updateImage, pixelDataToFalseColorData, rendering, imageCache, metaData, webGL, colors, convertImageToFalseColorImage, convertToFalseColorImage, restoreImage, EVENTS, events, triggerEvent, default */
+
+/*! ./falseColorMapping.js */
+
+/*! ./enabledElementData.js */
+
+/*! ./imageLoader.js */
+
+/*! ./canvasToPixel.js */
+
+/*! ./colors/index.js */
+
+/*! ./disable.js */
+
+/*! ./displayImage.js */
+
+/*! ./draw.js */
+
+/*! ./drawInvalidated.js */
+
+/*! ./enable.js */
+
+/*! ./fitToWindow.js */
+
+/*! ./internal/generateLut.js */
+
+/*! ./getDefaultViewportForImage.js */
+
+/*! ./getImage.js */
+
+/*! ./getPixels.js */
+
+/*! ./getViewport.js */
+
+/*! ./internal/index.js */
+
+/*! ./invalidate.js */
+
+/*! ./invalidateImageId.js */
+
+/*! ./metaData.js */
+
+/*! ./pageToPixel.js */
+
+/*! ./pixelToCanvas.js */
+
+/*! ./rendering/renderColorImage.js */
+
+/*! ./rendering/renderGrayscaleImage.js */
+
+/*! ./rendering/renderLabelMapImage.js */
+
+/*! ./rendering/renderPseudoColorImage.js */
+
+/*! ./rendering/renderToCanvas.js */
+
+/*! ./rendering/renderWebImage.js */
+
+/*! ./rendering/index.js */
+
+/*! ./reset.js */
+
+/*! ./internal/setDefaultViewport.js */
+
+/*! ./setToPixelCoordinateSystem.js */
+
+/*! ./setViewport.js */
+
+/*! ./internal/storedColorPixelDataToCanvasImageData.js */
+
+/*! ./internal/storedPixelDataToCanvasImageData.js */
+
+/*! ./internal/storedPixelDataToCanvasImageDataColorLUT.js */
+
+/*! ./internal/storedPixelDataToCanvasImageDataPseudocolorLUT.js */
+
+/*! ./webgl/index.js */
+
+/*!****************************************!*\
+  !*** ./internal/calculateTransform.js ***!
+  \****************************************/
+
+/*! ./transform.js */
+
+/*!************************************!*\
+  !*** ./internal/computeAutoVoi.js ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./internal/createViewport.js ***!
+  \************************************/
+
+/*! ./setDefaultViewport.js */
+
+/*!****************************************!*\
+  !*** ./internal/drawCompositeImage.js ***!
+  \****************************************/
+
+/*! ../layers.js */
+
+/*! ../rendering/renderGrayscaleImage.js */
+
+/*! ../rendering/renderColorImage.js */
+
+/*! ../rendering/renderPseudoColorImage.js */
+
+/*! ../rendering/renderLabelMapImage.js */
+
+/*! ../setToPixelCoordinateSystem.js */
+
+/*!*******************************!*\
+  !*** ./internal/drawImage.js ***!
+  \*******************************/
+
+/*!***********************************!*\
+  !*** ./internal/drawImageSync.js ***!
+  \***********************************/
+
+/*! ./now.js */
+
+/*! ./drawCompositeImage.js */
+
+/*! ../triggerEvent.js */
+
+/*! ../events.js */
+
+/*!**************************************!*\
+  !*** ./internal/generateColorLut.js ***!
+  \**************************************/
+
+/*! ./getVOILut.js */
+
+/*!*********************************!*\
+  !*** ./internal/generateLut.js ***!
+  \*********************************/
+
+/*! ./getModalityLUT.js */
+
+/*!*******************************!*\
+  !*** ./internal/getCanvas.js ***!
+  \*******************************/
+
+/*!****************************************!*\
+  !*** ./internal/getDefaultViewport.js ***!
+  \****************************************/
+
+/*! ./createViewport.js */
+
+/*! ./getImageFitScale.js */
+
+/*!**************************************!*\
+  !*** ./internal/getImageFitScale.js ***!
+  \**************************************/
+
+/*! ./validator.js */
+
+/*! ./getImageSize.js */
+
+/*!**********************************!*\
+  !*** ./internal/getImageSize.js ***!
+  \**********************************/
+
+/*!************************************!*\
+  !*** ./internal/getModalityLUT.js ***!
+  \************************************/
+
+/*!**********************************!*\
+  !*** ./internal/getTransform.js ***!
+  \**********************************/
+
+/*! ./calculateTransform.js */
+
+/*!*******************************!*\
+  !*** ./internal/getVOILut.js ***!
+  \*******************************/
+
+/*!**************************!*\
+  !*** ./internal/guid.js ***!
+  \**************************/
+
+/*!***************************!*\
+  !*** ./internal/index.js ***!
+  \***************************/
+
+/*! ./drawImage.js */
+
+/*! ./generateLut.js */
+
+/*! ./getDefaultViewport.js */
+
+/*! ./getTransform.js */
+
+/*! ./requestAnimationFrame.js */
+
+/*! ./storedColorPixelDataToCanvasImageData.js */
+
+/*! ./storedPixelDataToCanvasImageData.js */
+
+/*! ./storedPixelDataToCanvasImageDataColorLUT.js */
+
+/*! ./storedPixelDataToCanvasImageDataPseudocolorLUT.js */
+
+/*! ./storedPixelDataToCanvasImageDataRGBA.js */
+
+/*!*************************!*\
+  !*** ./internal/now.js ***!
+  \*************************/
+
+/*!*******************************************!*\
+  !*** ./internal/requestAnimationFrame.js ***!
+  \*******************************************/
+
+/*!****************************************!*\
+  !*** ./internal/setDefaultViewport.js ***!
+  \****************************************/
+
+/*! exports provided: default, state */
+
+/*!***********************************************************!*\
+  !*** ./internal/storedColorPixelDataToCanvasImageData.js ***!
+  \***********************************************************/
+
+/*!******************************************************!*\
+  !*** ./internal/storedPixelDataToCanvasImageData.js ***!
+  \******************************************************/
+
+/*!**************************************************************!*\
+  !*** ./internal/storedPixelDataToCanvasImageDataColorLUT.js ***!
+  \**************************************************************/
+
+/*! ../colors/index.js */
+
+/*!********************************************************************!*\
+  !*** ./internal/storedPixelDataToCanvasImageDataPseudocolorLUT.js ***!
+  \********************************************************************/
+
+/*!**********************************************************!*\
+  !*** ./internal/storedPixelDataToCanvasImageDataRGBA.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ./internal/storedRGBAPixelDataToCanvasImageData.js ***!
+  \**********************************************************/
+
+/*!*******************************!*\
+  !*** ./internal/transform.js ***!
+  \*******************************/
+
+/*! exports provided: Transform */
+
+/*!************************************!*\
+  !*** ./internal/tryEnableWebgl.js ***!
+  \************************************/
+
+/*! ../webgl/index.js */
+
+/*!*******************************!*\
+  !*** ./internal/validator.js ***!
+  \*******************************/
+
+/*! exports provided: validateParameterUndefined, validateParameterUndefinedOrNull */
+
+/*!***********************!*\
+  !*** ./invalidate.js ***!
+  \***********************/
+
+/*!******************************!*\
+  !*** ./invalidateImageId.js ***!
+  \******************************/
+
+/*!*******************!*\
+  !*** ./layers.js ***!
+  \*******************/
+
+/*! exports provided: rescaleImage, addLayer, removeLayer, getLayer, getLayers, getVisibleLayers, setActiveLayer, setLayerImage, getActiveLayer, purgeLayers */
+
+/*! ./internal/guid.js */
+
+/*!*********************!*\
+  !*** ./metaData.js ***!
+  \*********************/
+
+/*! exports provided: addProvider, removeProvider, default */
+
+/*!************************!*\
+  !*** ./pageToPixel.js ***!
+  \************************/
+
+/*!**************************************!*\
+  !*** ./pixelDataToFalseColorData.js ***!
+  \**************************************/
+
+/*!**************************!*\
+  !*** ./pixelToCanvas.js ***!
+  \**************************/
+
+/*!************************************************!*\
+  !*** ./rendering/doesImageNeedToBeRendered.js ***!
+  \************************************************/
+
+/*!*****************************!*\
+  !*** ./rendering/getLut.js ***!
+  \*****************************/
+
+/*! ../internal/computeAutoVoi.js */
+
+/*! ./lutMatches.js */
+
+/*! ../internal/generateLut.js */
+
+/*!****************************!*\
+  !*** ./rendering/index.js ***!
+  \****************************/
+
+/*! ./renderColorImage.js */
+
+/*! ./renderGrayscaleImage.js */
+
+/*! ./renderWebImage.js */
+
+/*! ./renderPseudoColorImage.js */
+
+/*! ./renderLabelMapImage.js */
+
+/*! ./renderToCanvas.js */
+
+/*!*********************************************!*\
+  !*** ./rendering/initializeRenderCanvas.js ***!
+  \*********************************************/
+
+/*!*********************************!*\
+  !*** ./rendering/lutMatches.js ***!
+  \*********************************/
+
+/*!***************************************!*\
+  !*** ./rendering/renderColorImage.js ***!
+  \***************************************/
+
+/*! exports provided: renderColorImage, addColorLayer */
+
+/*! ../internal/now.js */
+
+/*! ../internal/generateColorLut.js */
+
+/*! ../internal/storedColorPixelDataToCanvasImageData.js */
+
+/*! ../internal/storedRGBAPixelDataToCanvasImageData.js */
+
+/*! ./doesImageNeedToBeRendered.js */
+
+/*! ./initializeRenderCanvas.js */
+
+/*! ./saveLastRendered.js */
+
+/*!*******************************************!*\
+  !*** ./rendering/renderGrayscaleImage.js ***!
+  \*******************************************/
+
+/*! exports provided: renderGrayscaleImage, addGrayscaleLayer */
+
+/*! ../internal/storedPixelDataToCanvasImageData.js */
+
+/*! ../internal/storedPixelDataToCanvasImageDataRGBA.js */
+
+/*! ./getLut.js */
+
+/*!******************************************!*\
+  !*** ./rendering/renderLabelMapImage.js ***!
+  \******************************************/
+
+/*! exports provided: renderLabelMapImage, addLabelMapLayer */
+
+/*! ../internal/storedPixelDataToCanvasImageDataColorLUT.js */
+
+/*!*********************************************!*\
+  !*** ./rendering/renderPseudoColorImage.js ***!
+  \*********************************************/
+
+/*! exports provided: renderPseudoColorImage, addPseudoColorLayer */
+
+/*! ../internal/storedPixelDataToCanvasImageDataPseudocolorLUT.js */
+
+/*!*************************************!*\
+  !*** ./rendering/renderToCanvas.js ***!
+  \*************************************/
+
+/*! ../internal/drawImageSync.js */
+
+/*! ../internal/getDefaultViewport.js */
+
+/*! ../internal/tryEnableWebgl.js */
+
+/*!*************************************!*\
+  !*** ./rendering/renderWebImage.js ***!
+  \*************************************/
+
+/*! exports provided: renderWebImage */
+
+/*!***************************************!*\
+  !*** ./rendering/saveLastRendered.js ***!
+  \***************************************/
+
+/*!******************!*\
+  !*** ./reset.js ***!
+  \******************/
+
+/*!*******************!*\
+  !*** ./resize.js ***!
+  \*******************/
+
+/*! ./internal/getImageSize.js */
+
+/*!***************************************!*\
+  !*** ./setToPixelCoordinateSystem.js ***!
+  \***************************************/
+
+/*! ./internal/calculateTransform.js */
+
+/*!************************!*\
+  !*** ./setViewport.js ***!
+  \************************/
+
+/*!*************************!*\
+  !*** ./triggerEvent.js ***!
+  \*************************/
+
+/*!************************!*\
+  !*** ./updateImage.js ***!
+  \************************/
+
+/*!******************************************!*\
+  !*** ./webgl/createProgramFromString.js ***!
+  \******************************************/
+
+/*!************************!*\
+  !*** ./webgl/index.js ***!
+  \************************/
+
+/*! ./renderer.js */
+
+/*! ./createProgramFromString.js */
+
+/*! ./textureCache.js */
+
+/*!***************************!*\
+  !*** ./webgl/renderer.js ***!
+  \***************************/
+
+/*! exports provided: isWebGLInitialized, getRenderCanvas, initRenderer, render, isWebGLAvailable */
+
+/*! ./shaders/index.js */
+
+/*! ./vertexShader.js */
+
+/*!********************************!*\
+  !*** ./webgl/shaders/index.js ***!
+  \********************************/
+
+/*! exports provided: shaders, dataUtilities */
+
+/*! ./int16.js */
+
+/*! ./int8.js */
+
+/*! ./rgb.js */
+
+/*! ./uint16.js */
+
+/*! ./uint8.js */
+
+/*!********************************!*\
+  !*** ./webgl/shaders/int16.js ***!
+  \********************************/
+
+/*! exports provided: int16DataUtilities, int16Shader */
+
+/*!*******************************!*\
+  !*** ./webgl/shaders/int8.js ***!
+  \*******************************/
+
+/*! exports provided: int8DataUtilities, int8Shader */
+
+/*!******************************!*\
+  !*** ./webgl/shaders/rgb.js ***!
+  \******************************/
+
+/*! exports provided: rgbDataUtilities, rgbShader */
+
+/*!*********************************!*\
+  !*** ./webgl/shaders/uint16.js ***!
+  \*********************************/
+
+/*! exports provided: uint16DataUtilities, uint16Shader */
+
+/*!********************************!*\
+  !*** ./webgl/shaders/uint8.js ***!
+  \********************************/
+
+/*! exports provided: uint8DataUtilities, uint8Shader */
+
+/*!*******************************!*\
+  !*** ./webgl/textureCache.js ***!
+  \*******************************/
+
+/*!*******************************!*\
+  !*** ./webgl/vertexShader.js ***!
+  \*******************************/
+
+/*! exports provided: vertexShader */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+/**
+ * A better abstraction over CSS.
+ *
+ * @copyright Oleg Isonen (Slobodskoi) / Isonen 2014-present
+ * @website https://github.com/cssinjs/jss
+ * @license MIT
+ */
+
+/*! cornerstone-wado-image-loader - 2.2.4 - 2019-09-05 | (c) 2016 Chris Hafey | https://github.com/cornerstonejs/cornerstoneWADOImageLoader */
+
+/*!
+ * isobject <https://github.com/jonschlinkert/isobject>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*! dicom-parser - 1.8.4 - 2019-11-26 | (c) 2017 Chris Hafey | https://github.com/cornerstonejs/dicomParser */
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+
+/**!
+ * @fileOverview Kickass library to create and place poppers near their reference elements.
+ * @version 1.16.0
+ * @license
+ * Copyright (c) 2016 Federico Zivolo and contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+/*!
+ * https://github.com/es-shims/es5-shim
+ * @license es5-shim Copyright 2009-2015 by contributors, MIT License
+ * see https://github.com/es-shims/es5-shim/blob/master/LICENSE
+ */
+
+/*!
+ * https://github.com/paulmillr/es6-shim
+ * @license es6-shim Copyright 2013-2016 by Paul Miller (http://paulmillr.com)
+ *   and contributors,  MIT License
+ * es6-shim: v0.35.4
+ * see https://github.com/paulmillr/es6-shim/blob/0.35.3/LICENSE
+ * Details and documentation:
+ * https://github.com/paulmillr/es6-shim/
+ */
+
+/*!
+ * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+/** @license React v16.12.0
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.12.0
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v0.18.0
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.12.0
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/*!
+ * escape-html
+ * Copyright(c) 2012-2013 TJ Holowaychuk
+ * Copyright(c) 2015 Andreas Lubbe
+ * Copyright(c) 2015 Tiancheng "Timothy" Gu
+ * MIT Licensed
+ */
