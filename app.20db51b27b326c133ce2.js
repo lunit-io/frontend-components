@@ -838,5 +838,5 @@
     height: 100vh;
     overflow: hidden;
   }
-`);Object(r.installWADOImageLoader)(),Object(i.render)(a.a.createElement((function(){const e=Object(n.useMemo)(()=>new r.CornerstoneSingleImage("wadouri:https://lunit-frontend-fixtures.netlify.com/dcm-files/series/CT000010.dcm",{unload:r.unloadImage}),[]);return a.a.createElement("div",null,a.a.createElement(K,null),a.a.createElement(r.InsightViewer,{width:700,height:600,invert:!1,flip:!1,pan:!0,adjust:!1,zoom:!0,resetTime:Date.now(),image:e,updateCornerstoneRenderData:()=>{}}))}),null),document.querySelector("#app"))}]));
-//# sourceMappingURL=app.9c826a2192a515230fdb.js.map
+`);Object(r.installWADOImageLoader)(),Object(i.render)(a.a.createElement((function(){const e=Object(n.useMemo)(()=>new r.CornerstoneSingleImage("wadouri:https://lunit-io.github.io/frontend-fixtures/dcm-files/series/CT000010.dcm",{unload:r.unloadImage}),[]);return a.a.createElement("div",null,a.a.createElement(K,null),a.a.createElement(r.InsightViewer,{width:700,height:600,invert:!1,flip:!1,pan:!0,adjust:!1,zoom:!0,resetTime:Date.now(),image:e,updateCornerstoneRenderData:()=>{}}))}),null),document.querySelector("#app"))}]));
+//# sourceMappingURL=app.20db51b27b326c133ce2.js.map
