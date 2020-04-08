@@ -847,4 +847,4 @@
     overflow: hidden;
   }
 `);function G(){const e=Object(r.useMemo)(()=>new n.CornerstoneSingleImage("wadouri:https://fixtures.front.lunit.io/dcm-files/series/CT000010.dcm",{unload:n.unloadImage}),[]);return s.a.createElement("div",null,s.a.createElement(q,null),s.a.createElement(n.InsightViewer,{width:700,height:600,invert:!1,flip:!1,pan:!0,adjust:!1,zoom:!0,resetTime:Date.now(),image:e,updateCornerstoneRenderData:()=>{}}))}Object(n.installWADOImageLoader)(),Object(a.render)(s.a.createElement(G,null),document.querySelector("#app"))}]));
-//# sourceMappingURL=app.86a8643a08d85c30826c.js.map
+//# sourceMappingURL=app.15cc6477017939ce1de0.js.map
